@@ -27,13 +27,13 @@ function ListaLocalStorage() {
   };
 
   return (
-    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-slate-200/80 bg-gradient-to-br from-white via-slate-50 to-emerald-50 shadow-[0_24px_80px_-48px_rgba(15,23,42,0.45)]">
-      <div className="border-b border-slate-200/70 px-6 py-7 sm:px-8">
-        <span className="inline-flex rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.24em] text-emerald-700">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[1.5rem] border border-slate-200/80 bg-gradient-to-br from-white via-slate-50 to-emerald-50 shadow-[0_24px_80px_-48px_rgba(15,23,42,0.45)] sm:rounded-[2rem]">
+      <div className="border-b border-slate-200/70 px-4 py-6 sm:px-8 sm:py-7">
+        <span className="inline-flex rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.24em] text-emerald-700 sm:text-xs">
           Local Storage
         </span>
 
-        <h3 className="mt-4 text-3xl font-black tracking-tight text-slate-900 sm:text-4xl">
+        <h3 className="mt-4 text-2xl font-black tracking-tight text-slate-900 sm:text-4xl">
           Lista dinámica
         </h3>
 
@@ -43,7 +43,7 @@ function ListaLocalStorage() {
         </p>
       </div>
 
-      <div className="px-6 py-6 sm:px-8">
+      <div className="px-4 py-5 sm:px-8 sm:py-6">
         <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-start">
           <div className="w-full">
             <label
@@ -71,7 +71,7 @@ function ListaLocalStorage() {
         </div>
 
         <button
-          className="rounded-2xl bg-slate-900 px-5 py-3.5 font-semibold text-white shadow-lg shadow-slate-900/15 transition hover:-translate-y-0.5 hover:bg-slate-800 focus:outline-none focus:ring-4 focus:ring-slate-200"
+          className="w-full rounded-2xl bg-slate-900 px-5 py-3.5 font-semibold text-white shadow-lg shadow-slate-900/15 transition hover:-translate-y-0.5 hover:bg-slate-800 focus:outline-none focus:ring-4 focus:ring-slate-200 sm:w-auto"
           onClick={handleAñadir}
         >
           Añadir elemento
@@ -79,7 +79,7 @@ function ListaLocalStorage() {
       </div>
 
       {lista.length === 0 ? (
-        <div className="rounded-[1.75rem] border border-dashed border-slate-300 bg-white/70 px-6 py-12 text-center">
+        <div className="rounded-[1.4rem] border border-dashed border-slate-300 bg-white/70 px-4 py-10 text-center sm:rounded-[1.75rem] sm:px-6 sm:py-12">
           <h4 className="text-lg font-bold tracking-tight text-slate-700">
             Crea tu primer elemento
           </h4>
@@ -92,7 +92,7 @@ function ListaLocalStorage() {
           {lista.map((elemento) => (
             <li
               key={elemento.id}
-              className={`flex flex-col gap-4 rounded-[1.5rem] border px-4 py-4 shadow-sm transition sm:flex-row sm:items-center sm:justify-between ${
+              className={`flex flex-col gap-4 rounded-[1.25rem] border px-4 py-4 shadow-sm transition sm:flex-row sm:items-center sm:justify-between sm:rounded-[1.5rem] ${
                 elemento.completado
                   ? "border-emerald-200 bg-emerald-50/80"
                   : "border-slate-200 bg-white"
@@ -108,7 +108,7 @@ function ListaLocalStorage() {
                 {elemento.texto}
               </span>
 
-              <div className="flex items-center justify-between gap-3 sm:justify-end">
+              <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-end">
                 <label className="flex items-center gap-2 text-sm font-medium text-slate-600">
                   <input
                     type="checkbox"
@@ -138,7 +138,7 @@ function ListaLocalStorage() {
                       ),
                     )
                   }
-                  className="shrink-0 rounded-xl border border-red-200 bg-red-50 px-4 py-2 font-medium text-red-600 transition hover:bg-red-100 focus:outline-none focus:ring-4 focus:ring-red-100"
+                  className="w-full shrink-0 rounded-xl border border-red-200 bg-red-50 px-4 py-2 font-medium text-red-600 transition hover:bg-red-100 focus:outline-none focus:ring-4 focus:ring-red-100 sm:w-auto"
                 >
                   Eliminar
                 </button>
