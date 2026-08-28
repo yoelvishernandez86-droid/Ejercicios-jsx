@@ -1,0 +1,262 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;600;700;800&display=swap");
+
+:root {
+  --ink: #17231f;
+  --muted: #68736e;
+  --line: #d7dfd9;
+  --paper: #f5f6f1;
+  --panel: #ffffff;
+  --mint: #c8f27b;
+  --mint-dark: #294d2d;
+  --orange: #f28c5b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+button {
+  font: inherit;
+}
+
+.app-shell {
+  min-height: 100vh;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Manrope", sans-serif;
+  padding: 34px clamp(20px, 5vw, 76px) 22px;
+}
+
+.app-header,
+.app-footer,
+.workspace {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.app-header {
+  align-items: end;
+  border-bottom: 2px solid var(--ink);
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 22px;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+h1 {
+  font-size: clamp(2rem, 4vw, 4.5rem);
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+}
+h2 {
+  font-size: clamp(1.6rem, 3vw, 3rem);
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+.eyebrow,
+.exercise-count,
+.sidebar-heading,
+.panel-tag,
+.app-footer {
+  font-family: "DM Mono", monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.eyebrow {
+  color: var(--orange);
+  font-size: 0.72rem;
+  margin-bottom: 10px;
+}
+.exercise-count {
+  background: var(--mint);
+  border-radius: 999px;
+  color: var(--mint-dark);
+  font-size: 0.72rem;
+  padding: 10px 14px;
+}
+
+.workspace {
+  display: grid;
+  grid-template-columns: minmax(220px, 30%) 1fr;
+  min-height: 66vh;
+}
+.exercise-sidebar {
+  border-right: 1px solid var(--line);
+  padding: 28px 28px 28px 0;
+}
+.sidebar-heading {
+  display: flex;
+  font-size: 0.75rem;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.sidebar-index {
+  color: var(--muted);
+}
+.exercise-link {
+  align-items: flex-start;
+  background: transparent;
+  border: 0;
+  border-left: 3px solid transparent;
+  cursor: pointer;
+  display: flex;
+  gap: 14px;
+  padding: 15px 12px;
+  text-align: left;
+  transition:
+    background 0.2s,
+    border-color 0.2s;
+  width: 100%;
+}
+.exercise-link:hover,
+.exercise-link.is-active {
+  background: var(--panel);
+  border-left-color: var(--orange);
+}
+.exercise-number {
+  color: var(--orange);
+  font-family: "DM Mono", monospace;
+  font-size: 0.75rem;
+  padding-top: 2px;
+}
+.exercise-link strong,
+.exercise-link small {
+  display: block;
+}
+.exercise-link strong {
+  font-size: 0.9rem;
+}
+.exercise-link small,
+.empty-sidebar,
+.welcome-state > p:last-child {
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.6;
+}
+.empty-sidebar {
+  padding: 8px 12px 8px 0;
+}
+
+.exercise-panel {
+  background: var(--panel);
+  margin: 28px 0 28px 28px;
+  min-width: 0;
+  padding: clamp(24px, 5vw, 70px);
+}
+.panel-heading {
+  align-items: start;
+  display: flex;
+  justify-content: space-between;
+}
+.panel-tag {
+  background: var(--ink);
+  color: var(--mint);
+  font-size: 0.65rem;
+  padding: 8px 10px;
+}
+.exercise-stage {
+  border-top: 1px solid var(--line);
+  margin-top: 42px;
+  min-height: 280px;
+  padding-top: 32px;
+}
+.color-panel {
+  align-items: center;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  box-shadow: inset 0 2px 5px rgb(15 23 42 / 0.08);
+  display: flex;
+  justify-content: center;
+  min-height: 360px;
+  padding: 32px;
+  transition: background-color 0.5s;
+  width: 100%;
+}
+.color-button {
+  background: #0f172a;
+  border: 0;
+  border-radius: 8px;
+  box-shadow: 0 10px 15px rgb(15 23 42 / 0.2);
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 700;
+  padding: 12px 24px;
+  transition: 0.2s;
+}
+.color-button:hover {
+  background: #334155;
+  transform: translateY(-2px);
+}
+.color-button:focus-visible {
+  outline: 4px solid #cbd5e1;
+  outline-offset: 2px;
+}
+.color-button:active {
+  transform: translateY(0);
+}
+.welcome-state {
+  max-width: 500px;
+  padding-top: 8vh;
+}
+.welcome-mark {
+  color: var(--orange);
+  display: block;
+  font-family: "DM Mono", monospace;
+  font-size: 3rem;
+  margin-bottom: 28px;
+}
+.welcome-state h2 {
+  margin-bottom: 18px;
+}
+.welcome-state code {
+  background: #edf1e9;
+  font-family: "DM Mono", monospace;
+  font-size: 0.85em;
+  padding: 3px 5px;
+}
+
+.app-footer {
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  display: flex;
+  font-size: 0.65rem;
+  justify-content: space-between;
+  padding-top: 16px;
+}
+
+@media (max-width: 700px) {
+  .app-shell {
+    padding: 22px 16px 16px;
+  }
+  .app-header {
+    align-items: start;
+    gap: 16px;
+    flex-direction: column;
+  }
+  .workspace {
+    display: block;
+  }
+  .exercise-sidebar {
+    border-bottom: 1px solid var(--line);
+    border-right: 0;
+    padding: 22px 0;
+  }
+  .exercise-panel {
+    margin: 0;
+    min-height: 48vh;
+    padding: 30px 0;
+  }
+  .app-footer {
+    gap: 12px;
+    flex-direction: column;
+  }
+}
